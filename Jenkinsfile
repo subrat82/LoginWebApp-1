@@ -1,6 +1,6 @@
 node{
   def Namespace = "default"
-  def ImageName = "subratit/projects-mar-17"
+  def ImageName = "subratit/projects-mar-22-login-app"
   def ImageTag = "latest"
   def Creds	= "076eed1a-ddda-4fcc-b8bd-5fbf6fa738fd"
 
@@ -18,24 +18,24 @@ node{
   }
   
   stage('Maven Build'){ 
-    sh '/Applications/apache-maven-3.6.3/bin/mvn clean install -f "/Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/pom.xml"'
+    //sh '/Applications/apache-maven-3.6.3/bin/mvn clean install -f "/Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/pom.xml"'
      //sh 'ng build'
   }
   
   stage('Install tomcat'){
     //sh "/usr/local/bin/ansible-playbook /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/install-tomcat.yaml"
     //copy zar file 
-    sh "cp -r /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/target/ /Users/subrat/apache-tomcat-9.0.33/webapps/"
+    //sh "cp -r /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/target/ /Users/subrat/apache-tomcat-9.0.33/webapps/"
   }
 
   stage('Docker Build, Push'){
       sh "/usr/local/bin/docker --version"
      // sh "echo docker login localhost:8080"
-     // sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
+      sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
      // sh "/usr/local/bin/docker build -t projects-mar-19 ."
-      //sh "/usr/local/bin/docker tag projects-mar-19 subratit/projects-mar-19:latest"
-     // sh "echo build successfully"
-     // sh "/usr/local/bin/docker push subratit/projects-mar-19:latest"
+      sh "/usr/local/bin/docker tag projects-mar-22-login-webapp subratit/projects-mar-22-login-webapp:latest"
+      sh "echo build successfully"
+      sh "/usr/local/bin/docker push subratit/projects-mar-22-login-webapp:latest"
     }
    
     
