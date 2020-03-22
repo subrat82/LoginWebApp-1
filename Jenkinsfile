@@ -29,23 +29,23 @@ node{
   }
 
   stage('Docker Build, Push'){
-      sh "/usr/local/bin/docker --version"
+      sh "/usr/bin/docker --version"
      // sh "echo docker login localhost:8080"
       sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
      // sh "/usr/local/bin/docker build -t projects-mar-19 ."
-      sh "/usr/local/bin/docker tag projects-mar-22-login-webapp subratit/projects-mar-22-login-webapp:latest"
+      sh "/usr/bin/docker tag projects-mar-22-login-webapp subratit/projects-mar-22-login-webapp:latest"
       sh "echo build successfully"
-      sh "/usr/local/bin/docker push subratit/projects-mar-22-login-webapp:latest"
+      sh "/usr/bin/docker push subratit/projects-mar-22-login-webapp:latest"
     }
    
     
     stage('Deploy on K8s'){
        // sh "/usr/local/bin/ansible localhost -m ping"
        // sh "echo ansible ran successfully"
-        sh "/usr/local/bin/kubectl get ns"
-        sh "/usr/local/bin/kubectl version"
-        sh "/usr/local/bin/kubectl get pods"
-        sh "/usr/local/bin/kubectl get deployments"
+        sh "/usr/bin/kubectl get ns"
+        sh "/usr/bin/kubectl version"
+        sh "/usr/bin/kubectl get pods"
+        sh "/usr/bin/kubectl get deployments"
        // sh "/usr/local/bin/kubectl apply -f deployment.local.yaml"
       
         // sh "/usr/local/bin/kubectl apply -f kubernetes-deployment.yaml --validate=false"
