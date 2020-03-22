@@ -30,10 +30,9 @@ node{
       //sh "/usr/local/bin/docker tag projects-mar-19 subratit/projects-mar-19:latest"
      // sh "echo build successfully"
      // sh "/usr/local/bin/docker push subratit/projects-mar-19:latest"
-       }
     }
-
-    }
+   
+    
     stage('Deploy on K8s'){
        // sh "/usr/local/bin/ansible localhost -m ping"
        // sh "echo ansible ran successfully"
