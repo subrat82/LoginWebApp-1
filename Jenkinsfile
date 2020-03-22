@@ -21,6 +21,10 @@ node{
     sh '/Applications/apache-maven-3.6.3/bin/mvn clean install -f "/Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/pom.xml"'
      //sh 'ng build'
   }
+  
+  stage('Install tomcat'){
+    sh "/usr/local/bin/ansible-playbook install-tomcat.yaml"
+  }
 
   stage('Docker Build, Push'){
       sh "/usr/local/bin/docker --version"
