@@ -23,7 +23,7 @@ node{
   }
   
   stage('Install tomcat'){
-    sh "/usr/local/bin/ansible-playbook /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/install-tomcat.yaml"
+    //sh "/usr/local/bin/ansible-playbook /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/install-tomcat.yaml"
   }
 
   stage('Docker Build, Push'){
