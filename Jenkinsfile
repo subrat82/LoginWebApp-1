@@ -24,6 +24,8 @@ node{
   
   stage('Install tomcat'){
     //sh "/usr/local/bin/ansible-playbook /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/install-tomcat.yaml"
+    //copy zar file 
+    cp -r /Users/subrat/.jenkins/workspace/pipeline-login-webapp-1/target/ /Users/subrat/apache-tomcat-9.0.33/webapps/
   }
 
   stage('Docker Build, Push'){
