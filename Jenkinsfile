@@ -5,7 +5,6 @@ node{
   def Creds	= "076eed1a-ddda-4fcc-b8bd-5fbf6fa738fd"
 
 
-  try{
   stage('Checkout'){
       
     git branch: 'master',
@@ -49,10 +48,5 @@ node{
         //sh "/usr/local/bin/ansible-playbook -vvv /Users/subrat/.jenkins/workspace/pipeline_dfly-app/deploy1.yml --extra-vars ImageName=${ImageName} --extra-vars imageTag=${ImageTag}"
 
     }
-} 
-  catch (err) {
-    currentBuild.result = 'FAILURE'
-    }
-}
 }
 © 2020 GitHub, Inc.
