@@ -5,7 +5,7 @@ FROM openjdk:8-jdk-alpine3.7 AS builder
 RUN java -version
 
 
-RUN mkdir /usr/src/myapp/
+# RUN mkdir /usr/src/myapp/
 COPY . /usr/src/myapp/
 WORKDIR /usr/src/myapp/
 RUN apk --no-cache add maven && mvn --version
