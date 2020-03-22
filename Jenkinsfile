@@ -32,7 +32,7 @@ node{
       sh "/usr/bin/docker --version"
      // sh "echo docker login localhost:8080"
       sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
-      sh "/usr/local/bin/docker build -t subratit/projects-mar-22-login-webapp ."
+      sh "/usr/bin/docker build -t subratit/projects-mar-22-login-webapp ."
       //sh "/usr/bin/docker tag projects-mar-22-login-webapp subratit/projects-mar-22-login-webapp:latest"
       sh "echo build successfully"
       sh "/usr/bin/docker push subratit/projects-mar-22-login-webapp:latest"
