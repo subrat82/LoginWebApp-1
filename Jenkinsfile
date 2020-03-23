@@ -8,9 +8,10 @@ node{
     stage('Deploy on K8s'){
        // sh "/usr/local/bin/ansible localhost -m ping"
        // sh "echo ansible ran successfully"
-        //sh "/usr/bin/kubectl get namespaces"
-        sh "/usr/bin/kubectl version"
+       
+        //sh "/usr/bin/kubectl version"
         sh "/usr/bin/kubectl get pods"
+        sh "/usr/bin/kubectl get namespaces"
         sh "/usr/bin/kubectl get deployments"
        // sh "/usr/local/bin/kubectl apply -f deployment.local.yaml"
       
