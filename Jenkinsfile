@@ -1,10 +1,5 @@
 node{
-  def Namespace = "default"
-  def ImageName = "subratit/projects-mar-22-login-app"
-  def ImageTag = "latest"
-  def Creds	= "076eed1a-ddda-4fcc-b8bd-5fbf6fa738fd"
-
-
+ 
     stage('Deploy on K8s'){
        // sh "/usr/local/bin/ansible localhost -m ping"
        // sh "echo ansible ran successfully"
