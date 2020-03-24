@@ -1,5 +1,20 @@
 node{
  
+ stage('Checkout'){
+      
+    git branch: 'master',
+    credentialsId: 'cd86d294-d343-4a1b-8e19-388f2ac2f93b',
+    url: 'https://github.com/subrat82/LoginWebApp-1.git'
+      
+      
+      //git 'https://github.com/sasmita016/dfly-app.git'
+      sh "git rev-parse --short HEAD > .git/commit-id"
+      //imageTag= readFile('.git/commit-id').trim()
+
+
+
+  }
+ 
     stage('Deploy on K8s'){
         sh "/usr/bin/ansible all -m ping"
        // sh "echo ansible ran successfully"
