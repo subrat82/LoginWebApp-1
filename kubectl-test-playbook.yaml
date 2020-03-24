@@ -8,3 +8,7 @@
     - name: Get the phpmyadmin Pod name.
       command: >
         kubectl get pods
+        
+    - name: Get the phpmyadmin Pod name.
+      command: >
+        kubectl get deployments
