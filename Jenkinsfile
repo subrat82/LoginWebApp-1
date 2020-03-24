@@ -1,7 +1,7 @@
 node{
  
     stage('Deploy on K8s'){
-        sh "/usr/bin/ansible localhost -m ping"
+        sh "/usr/bin/ansible all -m ping"
        // sh "echo ansible ran successfully"
        
         //sh "/usr/bin/kubectl version"
