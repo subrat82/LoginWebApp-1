@@ -1,0 +1,10 @@
+---
+# This playbook assumes you already have the kubectl binary installed
+# and available in the $PATH.
+- hosts: k8s-master
+  become: yes
+
+  tasks:
+    - name: Get the phpmyadmin Pod name.
+      command: >
+        kubectl get pods
