@@ -1,7 +1,7 @@
 ---
 # This playbook assumes you already have the kubectl binary installed
 # and available in the $PATH.
-- hosts: localhost
+- hosts: all
   become: yes
 
   tasks:
