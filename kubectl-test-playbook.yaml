@@ -1,7 +1,7 @@
 ---
 # This playbook assumes you already have the kubectl binary installed
 # and available in the $PATH.
-- hosts: k8s-master
+- hosts: localhost
   become: yes
 
   tasks:
