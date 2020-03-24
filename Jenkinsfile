@@ -5,7 +5,7 @@ node{
        // sh "echo ansible ran successfully"
        
         //sh "/usr/bin/kubectl version"
-        sh "/usr/bin/kubectl get pods"
+        sh "/usr/bin/kubectl get pods --extra-vars ansible_ssh_user=root "
         sh "/usr/bin/kubectl get namespaces"
         sh "/usr/bin/kubectl get deployments"
        // sh "/usr/local/bin/kubectl apply -f deployment.local.yaml"
