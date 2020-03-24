@@ -5,9 +5,9 @@ node{
        // sh "echo ansible ran successfully"
        
         //sh "/usr/bin/kubectl version"
-        sh "/usr/local/bin/kubectl get pods"
-        sh "/usr/local/bin/kubectl get namespaces"
-        sh "/usr/local/bin/kubectl get deployments"
+        sh "/usr/bin/kubectl get pods"
+        sh "/usr/bin/kubectl get namespaces"
+        sh "/usr/bin/kubectl get deployments"
        // sh "/usr/local/bin/kubectl apply -f deployment.local.yaml"
       
         // sh "/usr/local/bin/kubectl apply -f kubernetes-deployment.yaml --validate=false"
