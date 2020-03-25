@@ -15,6 +15,33 @@ node{
 
   }
  
+ stage('Maven Build'){ 
+      sh '/usr/bin/mvn clean package -f "/var/lib/jenkins/workspace/my-login-webapp/pom.xml"'
+     //sh 'ng build'
+  }
+
+  stage('Docker Build, Push'){
+      sh "/usr/local/bin/docker --version"
+      sh "echo docker login localhost:8080"
+      //withDockerRegistry([credentialsId: "${Creds}", url: 'https://index.docker.io/v1/']) {
+    
+    //withDockerServer([uri: "tcp://127.0.0.1:2375"]) {
+    //withDockerRegistry([credentialsId: "${Creds}", url: "https://index.docker.io/v1/"]) {
+
+     //withDockerRegistry(credentialsId: "076eed1a-ddda-4fcc-b8bd-5fbf6fa738fd", url: '') {
+      //sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
+      //sh 'docker login --username=subratit --email=subratit@gmail.com docker.io'
+     // sh 'docker login -u subratit docker.io'
+     // sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
+      sh "/usr/local/bin/docker build -t projects-mar-22-login-webapp ."
+      sh "/usr/local/bin/docker tag projects-mar-22-login-webapp projects-mar-22-login-webapp:latest"
+      sh "echo build successfully"
+      sh "/usr/local/bin/docker push subratit/projects-mar-22-login-webapp:latest"
+      //  }
+    //}
+
+    }
+ 
     stage('Deploy on K8s'){
         sh "/usr/bin/ansible all -m ping"
        // sh "echo ansible ran successfully"
