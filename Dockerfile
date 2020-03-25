@@ -18,4 +18,4 @@ WORKDIR /root/
 COPY --from=builder /usr/src/myapp/target/ .
 
 EXPOSE 8123
-ENTRYPOINT ["java", "-jar", "./app.jar"]
+ENTRYPOINT ["java", "-jar", "./*.war"]
