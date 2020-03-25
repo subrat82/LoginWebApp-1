@@ -15,7 +15,7 @@ RUN mvn package
 # Stage 2 (to create a downsized "container executable", ~87MB)
 FROM openjdk:8-jre-alpine3.7
 WORKDIR /root/
-COPY --from=builder /usr/src/myapp/target/ .
+COPY --from=builder /usr/src/myapp/ .
 
 EXPOSE 8123
 ENTRYPOINT ["java", "-jar", "./usr/src/myapp/target/*.war"]
