@@ -34,7 +34,7 @@ node{
      // sh 'docker login -u subratit docker.io'
      // sh 'docker login -u "subratit" -p "Sasmita123*" docker.io'
       sh "/usr/bin/docker build -t projects-mar-22-login-webapp ."
-      sh "/usr/bin/docker tag projects-mar-22-login-webapp projects-mar-22-login-webapp:latest"
+      sh "/usr/bin/docker tag projects-mar-22-login-webapp subratit/projects-mar-22-login-webapp:latest"
       sh "echo build successfully"
       sh "/usr/bin/docker push subratit/projects-mar-22-login-webapp:latest"
       //  }
